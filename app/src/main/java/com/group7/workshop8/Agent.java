@@ -1,11 +1,10 @@
 /*
 Author: Alex Cress
+
+Model class for the Agent entity
  */
 
 package com.group7.workshop8;
-
-
-import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
