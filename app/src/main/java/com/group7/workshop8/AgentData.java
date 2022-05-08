@@ -14,6 +14,8 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 
@@ -55,6 +57,12 @@ public class AgentData {
                         Agent agent = new Agent(agentId, agtFirstName, agtMiddleInitial, agtLastName, agtBusPhone, agtEmail, agtPosition);
                         agents.add(agent);
                     }
+                    agents.sort(new Comparator<Agent>() {
+                        @Override
+                        public int compare(Agent agent1, Agent agent2) {
+                            return agent1.getAgtLastName().toLowerCase(Locale.ROOT).compareTo(agent2.getAgtLastName().toLowerCase(Locale.ROOT));
+                        }
+                    });
                     activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

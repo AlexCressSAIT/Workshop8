@@ -1,3 +1,7 @@
+/*
+Author: Alex Cress
+ */
+
 package com.group7.workshop8;
 
 
@@ -86,7 +90,7 @@ public class Agent implements Serializable {
 
     @Override
     public String toString() {
-        return agtFirstName + " " + agtLastName;
+        return agtLastName + ", " + agtFirstName;
     }
 }
 
